@@ -1,6 +1,6 @@
 # Living Open Source Zambia Community
 
-As a way of fostering Open Source adoption in Africa, the Livng Open Source Community is working towards building a unified platform for a sharing resources, providing remote online training and events.
+As a way of fostering Open Source adoption in Africa, the Living Open Source Community is working towards building a unified platform for sharing resources and providing remote online training and events.
 
 # REQUIREMENTS
 
@@ -31,12 +31,12 @@ cd los-community
 ```
 
 At this stage, you should already have installed composer, if you do not have composer.
-Do:
+Do the following:
 
 ```bash
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
 sudo php composer-setup.php --install-dir=/usr/local/bin --filename=composer
-rm composer-setup.php
+php -r "unlink('composer-setup.php');"
 ```
 
 Inside of the los-community directory, install laravel dependenciesby typing:
@@ -137,5 +137,5 @@ You are all set now :joy:
 
 # LICENSE
 
-This project is ditributed under the MIT Open Source Licence, as documented [here](LICENSE.md)
+This project is ditributed under the MIT Open Source Licence, as documented [here](LICENSE)
 
