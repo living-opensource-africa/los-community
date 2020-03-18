@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Auth;
+use App\User;
+use App\Role;
 
 class HomeController extends Controller
 {
@@ -37,5 +39,9 @@ class HomeController extends Controller
             default:
             abort(404);
         }
+    }
+
+    public function userTypes() {
+        return Role::get();
     }
 }

@@ -14,6 +14,8 @@ As a way of fostering Open Source adoption in Africa, the Living Open Source Com
 
 * Composer
 
+* NodeJS
+
 * Git
 
 # SETUP
@@ -125,9 +127,25 @@ To populate your database, run the migrations with the seed option:
 php artisan migrate:fresh --seed
 ```
 
+Install the node dependencies, with the following command:
+
+```bash
+npm install
+```
+
 After that is done, you are ready to roll.
 
-Run the development server by typing:
+Run the two development servers, i.e laravel & npm by typing:
+
+*Not* Run these in separate terminals 
+
+terminal 1:
+
+```bash
+npm run watch
+```
+
+Terminal 2:
 
 ```bash
 php artisan serve

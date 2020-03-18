@@ -52,7 +52,7 @@ input[type="number"] {
 	border: none;
 	border-bottom: 1px solid #f0883f;
 }
-
+  
 #nprogress .bar {
 	background: #ff8200 !important;
 }

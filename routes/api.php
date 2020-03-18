@@ -14,6 +14,27 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+/*
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
+});
+*/
+
+Route::group(['middleware' => ['auth:api']], function() {
+    Route::get('/user', function(Request $request) {
+        return $request->user();
+    });
+    Route::get('/user_types', 'HomeController@userTypes');
+});
+
+Route::group(['middleware' => ['auth:api', 'admin']], function() {
+
+});
+
+Route::group(['middleware' => ['auth:api', 'member']], function() {
+
+});
+
+Route::group(['middleware' => ['auth:api', 'student']], function() {
+
 });
