@@ -18,13 +18,15 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/los.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-los shadow-sm">
             <div class="container">
+                <img class="logo"
+                 src="{{ asset('images/LivingOpenSourceLogoOrangeText.jpg') }}" />
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Living Open Source') }}
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -55,18 +57,18 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="#">
+                                    <router-link  class="dropdown-item" to="/home/users">
                                         {{ __('Users') }}
-                                    </a>
-                                    <a class="dropdown-item" href="#">
+                                    </router-link >
+                                    <router-link  class="dropdown-item" to="/home/announcements">
                                         {{ __('Announcements') }}
-                                    </a>
-                                    <a class="dropdown-item" href="#">
+                                    </router-link >
+                                    <router-link  class="dropdown-item" to="/home/survey">
                                         {{ __('Survey') }}
-                                    </a>
-                                    <a class="dropdown-item" href="#">
+                                    </router-link >
+                                    <router-link class="dropdown-item" to="/home/preferences">
                                         {{ __('Preferences') }}
-                                    </a>
+                                    </router-link >
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

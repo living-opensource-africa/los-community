@@ -4,29 +4,45 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
-require('./bootstrap');
+require('./bootstrap')
 
-window.Vue = require('vue');
+// window.Vue = require('vue');
+import Vue from 'vue'
 
-/**
- * The following block of code may be used to automatically register your
- * Vue components. It will recursively scan this directory for the Vue
- * components and automatically register them with their "basename".
- *
- * Eg. ./components/ExampleComponent.vue -> <example-component></example-component>
- */
+import VueRouter from 'vue-router'
 
-// const files = require.context('./', true, /\.vue$/i)
-// files.keys().map(key => Vue.component(key.split('/').pop().split('.')[0], files(key).default))
+import appRoutes from './routes'
 
-Vue.component('options-menu', require('./components/Menu.vue').default);
+import NProgress from 'nprogress'
 
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+import '../../node_modules/nprogress/nprogress.css'
+
+window.Vue = Vue
+
+Vue.use(VueRouter)
+
+const routes = appRoutes
+
+const router = new VueRouter({
+	routes,
+	mode: 'history'
+})
+
+router.beforeResolve((to, from, next) => {
+  // If this isn't an initial page load.
+  if (to.name) {
+    // Start the route projectgress bar.
+    NProgress.start()
+  }
+  next()
+})
+
+router.afterEach((to, from) => {
+  // Complete the animation of the route progress bar.
+  NProgress.done()
+})
 
 const app = new Vue({
     el: '#app',
-});
+    router
+})

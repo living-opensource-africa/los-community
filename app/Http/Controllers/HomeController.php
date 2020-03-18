@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -17,12 +18,24 @@ class HomeController extends Controller
     }
 
     /**
-     * Show the application dashboard.
+     * Check the user typeand render a respective page
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
     public function index()
     {
-        return view('home');
+        switch(Auth::user()->user_type) {
+            case 1:
+                return view('admin.home');
+            break;
+            case 2:
+                return view('member.home');
+            break;
+            case 3:
+                return view('student.home');
+            break;
+            default:
+            abort(404);
+        }
     }
 }

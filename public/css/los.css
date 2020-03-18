@@ -1,0 +1,59 @@
+.bg-los {
+    background-color: #ffffff;
+}
+
+.logo {
+	width: 10em;
+}
+.card-header {
+	background-color: #f0883f;
+}
+
+.btn {
+	background-color: #f0883f22;
+	color: #000000;
+	border: none;
+}
+
+.btn:hover {
+	background-color: #f0883f;
+	color: #ffffff;
+}
+
+a:active .btn:active {
+	background-color: #f0883f;
+	border: none;
+}
+
+input[type="text"] {
+	background-color: #ffffff;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #f0883f;
+}
+
+input[type="email"] {
+	background-color: #ffffff;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #f0883f;
+}
+
+input[type="password"] {
+	background-color: #ffffff;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #f0883f;
+}
+
+input[type="number"] {
+	background-color: #ffffff;
+	color: #000000;
+	border: none;
+	border-bottom: 1px solid #f0883f;
+}
+
+#nprogress .bar {
+	background: #ff8200 !important;
+}
+

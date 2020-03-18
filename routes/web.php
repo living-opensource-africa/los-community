@@ -19,18 +19,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home/{any?}', 'HomeController@index')->name('home');
 
 // Admin Routes
 
 Route::group(['middleware' => ['isActive', 'Admin'], 'prefix' => 'admin'], function() {
-    // Admin routes defination
+    Route::get('/', 'AdminController@index')->name('admin.index');
 });
 
 Route::group(['middleware' => ['isActive','member'], 'prefix' => 'member'], function() {
-    // Member routes defination
+    Route::get('/', 'MemberController@index')->name('member.index');
 });
 
 Route::group(['middleware' => ['isActive', 'student'], 'prefix' => 'student'], function() {
-    // STudent Routes
+    Route::get('/', 'StudentController@index')->name('Student.index');
 });
