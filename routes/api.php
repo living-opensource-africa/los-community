@@ -25,6 +25,7 @@ Route::group(['middleware' => ['auth:api']], function() {
         return $request->user();
     });
     Route::get('/user_types', 'HomeController@userTypes');
+    Route::get('/meetups', 'HomeController@meetups');
 });
 
 Route::group(['middleware' => ['auth:api', 'admin']], function() {

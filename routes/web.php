@@ -19,18 +19,22 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home/{any?}', 'HomeController@index')->name('home');
-
-// Admin Routes
-
-Route::group(['middleware' => ['isActive', 'Admin'], 'prefix' => 'admin'], function() {
-    Route::get('/', 'AdminController@index')->name('admin.index');
+Route::group(['middleware' => ['isActive', 'auth']], function() {
+	Route::get('/home/{any?}', 'HomeController@index')->name('home');
 });
 
-Route::group(['middleware' => ['isActive','member'], 'prefix' => 'member'], function() {
+// Admin Routes
+Route::group(['middleware' => ['isActive', 'auth', 'Admin'], 'prefix' => 'admin'], function() {
+    Route::get('/', 'AdminController@index')->name('admin.index');
+    Route::post('/meet_up', 'AdminController@createMeetUp')->name('admin.meetup');
+});
+
+// Member Routes
+Route::group(['middleware' => ['isActive', 'auth', 'member'], 'prefix' => 'member'], function() {
     Route::get('/', 'MemberController@index')->name('member.index');
 });
 
-Route::group(['middleware' => ['isActive', 'student'], 'prefix' => 'student'], function() {
+// Student Area
+Route::group(['middleware' => ['isActive', 'auth', 'student'], 'prefix' => 'student'], function() {
     Route::get('/', 'StudentController@index')->name('Student.index');
 });

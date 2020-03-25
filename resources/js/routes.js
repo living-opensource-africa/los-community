@@ -5,6 +5,11 @@ const appRoutes = [
  	component: require('./components/Users.vue').default
  },
  { 
+	path: '/home/trainings',
+	name: 'home.trainings',
+	component: require('./components/Trainings.vue').default
+ },
+ { 
  	path: '/home/announcements',
  	name: 'home.announcements',
  	component: require('./components/Announcements.vue').default

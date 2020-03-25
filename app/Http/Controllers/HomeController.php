@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Auth;
 use App\User;
 use App\Role;
+use App\MeetUp;
+use Carbon\Carbon;
 
 class HomeController extends Controller
 {
@@ -20,9 +22,9 @@ class HomeController extends Controller
     }
 
     /**
-     * Check the user typeand render a respective page
+     * Check the user type and render a respective page
      *
-     * @return \Illuminate\Contracts\Support\Renderable
+     * @return view
      */
     public function index()
     {
@@ -41,7 +43,20 @@ class HomeController extends Controller
         }
     }
 
+    /**
+     * Get platform user types
+     * @return Model
+     */
     public function userTypes() {
         return Role::get();
+    }
+
+    /**
+    * Return json response of meetups
+    * @return json 
+    */
+    public function meetups() {
+        return MeetUp::where('date_time', 
+            '>=', Carbon::now())->get();
     }
 }
