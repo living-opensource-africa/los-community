@@ -8,7 +8,7 @@ As a way of fostering Open Source adoption in Africa, the Living Open Source Com
 
 >PHP Modules required
 
-    Modules (cli, curl, mbstring, pdo_mysql, gd, zip, xml, json)
+Modules (cli, curl, mbstring, pdo, mysql, gd, zip, xml, json,bcmath, ctype, dom, xml, openssl, tokenizer, zip)
 
 * MySQL/MariaBD
 
