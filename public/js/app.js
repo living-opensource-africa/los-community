@@ -55141,8 +55141,8 @@ var appRoutes = [{
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /home/arthur/Documents/Dev/ProDev/los-community/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /home/arthur/Documents/Dev/ProDev/los-community/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /home/arthur/Documents/Dev/los-community/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /home/arthur/Documents/Dev/los-community/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })

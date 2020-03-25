@@ -16,7 +16,7 @@ class CreateMembersTable extends Migration
         Schema::create('members', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id');
-            $table->json('phone')->nullable();
+            $table->longText('phone')->nullable();
             $table->string('address')->nullable();
             $table->string('profession')->nullable();
             $table->timestamps();
