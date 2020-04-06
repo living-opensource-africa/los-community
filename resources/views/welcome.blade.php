@@ -1,89 +1,53 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-
-        <title>Living Open Source Community</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-
-                        @if (Route::has('register'))
-                            <a href="{{ route('register') }}">Register</a>
-                        @endif
-                    @endauth
+@extends('layouts.app')
+@section('content')
+<body>
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="title m-b-md text-right">
+                Living Open Source Commuity &nbsp;
+            </div>
+            <div class="col-md-12 row">
+              <div class="col-md-3 card">
+                <h3> Built for Developers </h3>
+                Working torwards building an open plaform where developers share
+                ideas, plan out their journey and collaborate on open source
+                projects.
+                <br />
+                <div class="text-center">
+                  <i class="fa fa-code v-aid" aria-hidden="true"></i>
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Living Open Source Commuity
+              </div>
+              <div class="col-md-3 card">
+                <h3> Home for Open source Enthusiasts </h3>
+                Building a place where Open Source Enthusiasts, and experts can
+                come together to build game changing ideas into realities.
+                <br />
+                <div class="text-center">
+                  <i class="fa fa-terminal v-aid" aria-hidden="true"></i>
                 </div>
+              </div>
+              <div class="col-md-3 card">
+                <h3> A community of Tech Geeks </h3>
+                Fostering the adoption of Open Source across the continent of
+                Africa as a way of building sustainable economies in the
+                information era.
+                <br />
+                <div class="text-center">
+                  <i class="fa fa-users v-aid" aria-hidden="true"></i>
+                </div>
+              </div>
+              <div class="col-md-3 card">
+                <h3> Community Meetups </h3>
+                Coming build relationships with other tech nerds using our remote
+                virtual meetup.
+                We are closer by far, distance is only an illusion
+                <br />
+                <div class="text-center">
+                  <i class="fa fa-globe v-aid" aria-hidden="true"></i>
+                </div>
+              </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+</body>
+@endsection

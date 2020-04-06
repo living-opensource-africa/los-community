@@ -59,4 +59,29 @@ class HomeController extends Controller
         return MeetUp::where('date_time', 
             '>=', Carbon::now())->get();
     }
+
+    /**
+     * Past meetups/events
+     * @return json
+     */
+    public function past_meetups() {
+        return MeetUp::where('date_time',
+         '<=', Carbon::now())->get();
+    }
+
+    /**
+     * query a training by id
+     * @return json
+     */
+    public function training($id) {
+       return MeetUp::find($id);
+    }
+
+    /**
+     * Get user by id
+     * @return json
+    */
+    public function getUser($id) {
+        return User::find($id);
+    }
 }

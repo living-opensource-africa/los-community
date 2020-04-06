@@ -74,8 +74,18 @@
 		   <br />
 		   <ol>
 			   <li v-bind:key="meet.id" v-for="meet in meetup">
-				    {{ meet.title }} 
-					<i class="fa fa-edit"> Edit </i>
+				    <a 
+						v-bind:href="'trainings/'+meet.id+'/view'" 
+						v-bind:title="meet.description">
+						{{ meet.title }}
+					</a> 
+					<i 
+					v-if="auth.id == meet.user_id"
+					class="fa fa-edit"
+					v-bind:href="'trainings/'+meet.id+'/edit'" 
+					v-bind:title="'edit '+meet.title">
+					 Edit 
+					</i>
 				</li>
 		   </ol>
 	   </div>
@@ -101,6 +111,7 @@ export default {
 			msg: '',
 			trigger: '',
 			toggle: '',
+			auth: ''
 		}
 	},
 	methods: {
@@ -114,6 +125,8 @@ export default {
 			.then(response => {
 				this.toggle = "success"
 				this.msg = response.data.message
+				// Reload the trainings tab
+				this.loadTrainings()
 			})
 			.catch(error => {
 				this.trigger = "errors"
@@ -143,17 +156,23 @@ export default {
 					})
 					this.trigger = "errors"
 				}
+		},
+		loadTrainings() {
+			axios.get('/api/meetups')
+				.then(response => {
+					this.meetup = response.data
+		})
+		},
+		getUser() {
+			axios.get('/api/user')
+				.then(response => {
+					this.auth = response.data
+				})
 		}
 	},
 	created () {
-		axios.get('/api/meetups')
-		.then(response => {
-			this.meetup = response.data
-		})
+		this.loadTrainings(),
+		this.getUser()
 	}
 }
-
 </script>
-<style scoped>
-
-</style>

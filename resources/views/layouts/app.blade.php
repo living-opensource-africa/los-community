@@ -19,6 +19,7 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/los.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome-5.13.0-web/css/all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
@@ -94,4 +95,6 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('fontawesome-5.13.0-web/js/all.min.js') }}" defer></script>
+@yield('script')
 </html>
