@@ -76,5 +76,11 @@ class RouteServiceProvider extends ServiceProvider
              ->middleware('api')
              ->namespace($this->namespace)
              ->group(base_path('routes/api.php'));
+
+        Route::prefix('api_v2')
+              ->middleware('api')
+              ->middleware('MeetAppAuth')
+              ->namespace($this->namespace)
+              ->group(base_path('routes/api_v2.php'));
     }
 }

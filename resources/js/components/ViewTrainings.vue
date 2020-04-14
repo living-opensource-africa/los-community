@@ -4,13 +4,15 @@
             <div class="col-md-12">
                 <h3> {{ training.title }} </h3> by {{ trainer.name }}
                 <br />
+                Scheduled for {{ training.date_time }} CAT
                 <br />
                 <p> {{ training.description }} </p>
+                <br />
                 <form action="/room" method="POST">
 
-                    <input 
+                    <input
                     name="room_id"
-                    type="hidden" 
+                    type="hidden"
                     v-bind:value="training.id" />
 
                     <input
@@ -19,7 +21,7 @@
                     v-bind:value="token" />
 
                     <button class="btn btn-primary">JOIN</button>
-                
+
                 </form>
             </div>
         </div>

@@ -1,7 +1,7 @@
 <template>
     <div class="container">
       <div class="col-md-12 row">
-		<div class="col-md-8">
+		<div class="col-md-8" v-if="auth.user_type == 1">
 		   <h3> Create Meet Up </h3>
 		    <div class="form-group">
                	<div class="form-row">
@@ -74,17 +74,17 @@
 		   <br />
 		   <ol>
 			   <li v-bind:key="meet.id" v-for="meet in meetup">
-				    <a 
-						v-bind:href="'trainings/'+meet.id+'/view'" 
+				    <a
+						v-bind:href="'trainings/'+meet.id+'/view'"
 						v-bind:title="meet.description">
 						{{ meet.title }}
-					</a> 
-					<i 
+					</a>
+					<i
 					v-if="auth.id == meet.user_id"
 					class="fa fa-edit"
-					v-bind:href="'trainings/'+meet.id+'/edit'" 
+					v-bind:href="'trainings/'+meet.id+'/edit'"
 					v-bind:title="'edit '+meet.title">
-					 Edit 
+					 Edit
 					</i>
 				</li>
 		   </ol>

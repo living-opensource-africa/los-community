@@ -67,5 +67,6 @@ class Kernel extends HttpKernel
         'Admin' => \App\Http\Middleware\Admin::class,
         'member' => \App\Http\Middleware\member::class,
         'student' => \App\Http\Middleware\student::class,
+        'MeetAppAuth' => \App\Http\Middleware\MeetAppAuth::class
     ];
 }

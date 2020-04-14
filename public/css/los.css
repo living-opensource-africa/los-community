@@ -79,3 +79,9 @@ input[type="time"] {
 .centre {
   float: right;
 }
+
+.container-bg {
+  background-image: url('../images/LivingOpenSourceLogoOrangeText.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}

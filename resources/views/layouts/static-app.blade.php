@@ -60,21 +60,21 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <router-link  class="dropdown-item" to="/home/users">
+                                    <a  class="dropdown-item" href="/home/users">
                                         {{ __('Users') }}
-                                    </router-link >
-                                    <router-link  class="dropdown-item" to="/home/trainings">
+                                    </a>
+                                    <a  class="dropdown-item" href="/home/trainings">
                                         {{ __('Trainings') }}
-                                    </router-link >
-                                    <router-link  class="dropdown-item" to="/home/announcements">
+                                    </a>
+                                    <a  class="dropdown-item" href="/home/announcements">
                                         {{ __('Announcements') }}
-                                    </router-link >
-                                    <router-link  class="dropdown-item" to="/home/knowledge">
+                                    </a>
+                                    <a  class="dropdown-item" href="/home/knowledge">
                                         {{ __('Knowledge Base') }}
-                                    </router-link >
-                                    <router-link class="dropdown-item" to="/home/preferences">
+                                    </a>
+                                    <a class="dropdown-item" href="/home/preferences">
                                         {{ __('Preferences') }}
-                                    </router-link >
+                                    </a>
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">

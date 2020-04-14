@@ -1,8 +1,8 @@
-@extends('layouts.app')
+@extends('layouts.static-app')
 @section('content')
 <body>
     <div class="flex-center position-ref full-height">
-        <div class="content">
+        <div class="container">
             <div class="title m-b-md text-right">
                 Living Open Source Commuity &nbsp;
             </div>
