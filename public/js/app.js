@@ -1939,6 +1939,10 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: 'AllUsers',
   data: function data() {
@@ -39055,17 +39059,7 @@ var render = function() {
   var _c = _vm._self._c || _h
   return _c("div", { staticClass: "row col-md-12" }, [
     _c("div", { staticClass: "col-md-6" }, [
-      _c("h3", [_vm._v(" Hi, " + _vm._s(_vm.auth.name))]),
-      _vm._v(" "),
-      _vm.auth.user_type == 1
-        ? _c("div", { staticClass: "col-md-6" })
-        : _vm._e(),
-      _vm._v(" "),
-      _vm.auth.user_type != 1
-        ? _c("div", { staticClass: "col-md-12" }, [
-            _c("h6", [_vm._v(" Sorry, this service is not available to you ")])
-          ])
-        : _vm._e()
+      _c("h3", [_vm._v(" Hi, " + _vm._s(_vm.auth.name))])
     ]),
     _vm._v(" "),
     _vm.auth.user_type == 1
@@ -39103,7 +39097,19 @@ var render = function() {
             attrs: { type: "button", value: "SAVE" }
           })
         ])
-      : _vm._e()
+      : _c("div", { staticClass: "col-md-6 card-right" }, [
+          _c("h3", [_vm._v(" Community Members ")]),
+          _vm._v(" "),
+          _c(
+            "ol",
+            _vm._l(_vm.users, function(user) {
+              return _c("li", { key: user.id }, [
+                _vm._v("\n          " + _vm._s(user.name) + "\n        ")
+              ])
+            }),
+            0
+          )
+        ])
   ])
 }
 var staticRenderFns = []
