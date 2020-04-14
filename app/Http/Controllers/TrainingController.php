@@ -13,6 +13,8 @@ class TrainingController extends Controller
      */
     public function index(Request $request) {
         $training = MeetUp::find($request->room_id);
-        return view('training', compact(['training']));
+        $agent = new \Jenssegers\Agent\Agent;
+        $isDesktop = $agent->isDesktop();
+        return view('training', compact(['training', 'isDesktop']));
     }
 }

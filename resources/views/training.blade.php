@@ -2,11 +2,16 @@
 @section('content')
 <div class="container">
     <div class="col-md-12 row" id="meet">
-
+      @if (!$isDesktop)
+        <div class="col-md-12 no-support text-center">
+          <h4> Sorry, mobile devices not yet supported </h4>
+        </div>
+      @endif
     </div>
 </div>
 @endsection
 @section('script')
+@if ($isDesktop)
 <script src="{{ env('MEETAPP_URL') }}"></script>
 <script>
 
@@ -34,4 +39,5 @@ window.onload = (evt) => {
   })
 }
 </script>
+@endif
 @endsection

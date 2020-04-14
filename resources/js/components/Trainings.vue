@@ -70,7 +70,7 @@
             </div>
        </div>
 	   <div class="col-md-4">
-		   <h3> Upcoming Meet Ups </h3>
+		   <h3> Meet Ups </h3>
 		   <br />
 		   <ol>
 			   <li v-bind:key="meet.id" v-for="meet in meetup">

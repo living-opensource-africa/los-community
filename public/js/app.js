@@ -39566,7 +39566,7 @@ var render = function() {
         : _vm._e(),
       _vm._v(" "),
       _c("div", { staticClass: "col-md-4" }, [
-        _c("h3", [_vm._v(" Upcoming Meet Ups ")]),
+        _c("h3", [_vm._v(" Meet Ups ")]),
         _vm._v(" "),
         _c("br"),
         _vm._v(" "),
