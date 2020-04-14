@@ -84,4 +84,12 @@ class HomeController extends Controller
     public function getUser($id) {
         return User::find($id);
     }
+
+     /**
+     * Get all users
+     * @return json
+    */
+    public function getAllUsers() {
+        return User::get();
+    }
 }

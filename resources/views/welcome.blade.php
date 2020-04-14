@@ -18,7 +18,7 @@
                 </div>
               </div>
               <div class="col-md-3 card">
-                <h3> Home for Open source Enthusiasts </h3>
+                <h3> Home for Open Source Enthusiasts </h3>
                 Building a place where Open Source Enthusiasts, and experts can
                 come together to build game changing ideas into realities.
                 <br />
@@ -27,7 +27,7 @@
                 </div>
               </div>
               <div class="col-md-3 card">
-                <h3> A community of Tech Geeks </h3>
+                <h3> A Community of Tech Geeks </h3>
                 Fostering the adoption of Open Source across the continent of
                 Africa as a way of building sustainable economies in the
                 information era.
@@ -38,7 +38,7 @@
               </div>
               <div class="col-md-3 card">
                 <h3> Community Meetups </h3>
-                Coming build relationships with other tech nerds using our remote
+                Come build relationships with other tech nerds using our remote
                 virtual meetup.
                 We are closer by far, distance is only an illusion
                 <br />

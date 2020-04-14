@@ -1,12 +1,12 @@
 <template>
     <div class="container">
-       <AddUser />
+       <AllUsers />
     </div>
 </template>
 
 <script>
 
-import AddUser from './AddUser'
+import AllUsers from './AllUsers'
 
 export default {
 	data () {
@@ -15,7 +15,7 @@ export default {
 		}
 	},
 	components: {
-		AddUser
+		AllUsers
 	},
 	methods: {
 		// No methods defined

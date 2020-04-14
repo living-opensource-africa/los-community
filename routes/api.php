@@ -24,6 +24,7 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::get('/user', function(Request $request) {
         return $request->user();
     });
+    Route::get('/all_users', 'HomeController@getAllUsers');
     Route::get('/user_types', 'HomeController@userTypes');
     Route::get('/meetups', 'HomeController@meetups');
     Route::get('/training/{id}', 'HomeController@training');
