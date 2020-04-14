@@ -20,7 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::group(['middleware' => ['isActive', 'auth']], function() {
-	Route::get('/home/{any?}', 'HomeController@index')->name('home');
+    Route::get('/home/{any?}/{id?}/{action?}', 'HomeController@index')->name('home');
+    Route::post('/room', 'TrainingController@index');
 });
 
 // Admin Routes

@@ -66,8 +66,32 @@ input[type="time"] {
 	border: none;
 	border-bottom: 1px solid #f0883f;
 }
-  
+
 #nprogress .bar {
 	background: #ff8200 !important;
 }
 
+.v-aid {
+  font-size: 55px;
+  color: orange;
+}
+
+.centre {
+  float: right;
+}
+
+.container-bg {
+  background-image: url('../images/LivingOpenSourceLogoOrangeText.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.no-support {
+  background-image: url('../images/phone-not-supported.jpeg');
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 400px;
+  z-index: -10;
+  color:  #f0883f;
+  text-shadow: 1px 1px 2px #fff;
+}

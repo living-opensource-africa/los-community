@@ -1,4 +1,4 @@
-# Living Open Source Zambia Community
+# Living Open Source Africa Community
 
 As a way of fostering Open Source adoption in Africa, the Living Open Source Community is working towards building a unified platform for sharing resources and providing remote online training and events.
 

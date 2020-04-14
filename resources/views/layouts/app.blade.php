@@ -7,6 +7,8 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
+    <link rel="icon" href="{{ asset('images/LOSAfrica.png') }}" />
+
     <title>{{ config('app.name', 'Living Open Source Community') }}</title>
 
     <!-- Scripts -->
@@ -19,10 +21,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/los.css') }}" rel="stylesheet">
+    <link href="{{ asset('fontawesome-5.13.0-web/css/all.min.css') }}" rel="stylesheet">
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light bg-los shadow-sm">
+        <nav class="navbar navbar-expand-md navbar-light bg-los shadow-lg">
             <div class="container">
                 <img class="logo"
                  src="{{ asset('images/LivingOpenSourceLogoOrangeText.jpg') }}" />
@@ -66,8 +69,8 @@
                                     <router-link  class="dropdown-item" to="/home/announcements">
                                         {{ __('Announcements') }}
                                     </router-link >
-                                    <router-link  class="dropdown-item" to="/home/survey">
-                                        {{ __('Survey') }}
+                                    <router-link  class="dropdown-item" to="/home/knowledge">
+                                        {{ __('Knowledge Base') }}
                                     </router-link >
                                     <router-link class="dropdown-item" to="/home/preferences">
                                         {{ __('Preferences') }}
@@ -94,4 +97,6 @@
         </main>
     </div>
 </body>
+<script src="{{ asset('fontawesome-5.13.0-web/js/all.min.js') }}" defer></script>
+@yield('script')
 </html>
