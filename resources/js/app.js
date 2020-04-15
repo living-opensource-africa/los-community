@@ -16,10 +16,15 @@ import appRoutes from './routes'
 import NProgress from 'nprogress'
 
 import '../../node_modules/nprogress/nprogress.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome'
 
 window.Vue = Vue
 
+library.add(fas)
 Vue.use(VueRouter)
+Vue.component('font-awesome-icon', FontAwesomeIcon)
 
 const routes = appRoutes
 

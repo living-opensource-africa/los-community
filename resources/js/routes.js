@@ -20,6 +20,11 @@ const appRoutes = [
 	component: require('./components/ViewTrainings.vue').default
  },
  {
+ path: '/home/trainings/:id/edit',
+ name: 'home.trainings.edit',
+ component: require('./components/EditTraining.vue').default
+ },
+ {
  	path: '/home/announcements',
  	name: 'home.announcements',
  	component: require('./components/Announcements.vue').default

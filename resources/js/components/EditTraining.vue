@@ -2,7 +2,7 @@
     <div class="container">
       <div class="col-md-12 row">
 		<div class="col-md-8" v-if="auth.user_type == 1">
-		   <h3> Create Meet Up </h3>
+		   <h3> Edit Meet Up </h3>
 		    <div class="form-group">
                	<div class="form-row">
                		<div class="col-md-6">
@@ -64,20 +64,20 @@
                		<div class="col-md-6">
                			<input class="form-control btn btn-primary" type="submit"
                				placeholder="Save this meet up"
-							   value="SAVE" v-on:click="notEmpty()" />
+							   value="UPDATE" v-on:click="notEmpty()" />
                		</div>
                	</div>
             </div>
        </div>
 	   <div class="col-md-4">
-		   <h3> Meet Ups </h3>
+		   <h3> Modify Meet Ups </h3>
 		   <br />
 		   <ol>
 			   <li v-bind:key="meet.id" v-for="meet in meetup">
 				    <div class="row">
               <div class="col-md-6">
                 <a
-    						  v-bind:href="'trainings/'+meet.id+'/view'"
+    						  v-bind:href="host+'/home/trainings/'+meet.id+'/edit'"
     						  v-bind:title="meet.description">
     						  {{ meet.title }}
     					 </a>
@@ -85,9 +85,9 @@
               <div class="col-md-6">
                 <a
       					  v-if="auth.id == meet.user_id"
-      					  v-bind:href="'trainings/'+meet.id+'/edit'"
-      					  v-bind:title="'edit '+meet.title">
-      					   <font-awesome-icon icon="edit" />
+      					  @click="deleteMeetUp(meet.id)"
+      					  v-bind:title="'delete '+meet.title">
+      					   <font-awesome-icon icon="trash" />
                 </a>
               </div>
             </div>
@@ -116,12 +116,14 @@ export default {
 			msg: '',
 			trigger: '',
 			toggle: '',
-			auth: ''
+			auth: '',
+      training: '',
+      host: window.location.origin
 		}
 	},
 	methods: {
 		save () {
-			axios.post('/admin/meet_up', {
+			axios.put('/api/training/'+this.$route.params.id+'/update', {
 				title: this.title,
 				date: this.date,
 				time: this.time,
@@ -133,9 +135,9 @@ export default {
 				// Reload the trainings tab
 				this.loadTrainings()
 			})
-			.catch(error => {
+			.catch(err => {
 				this.trigger = "errors"
-				this.msg = error.data.message
+				this.msg = err.data.message
 			})
 		},
 		notEmpty () {
@@ -168,16 +170,29 @@ export default {
 					this.meetup = response.data
 		})
 		},
-		getUser() {
-			axios.get('/api/user')
-				.then(response => {
-					this.auth = response.data
-				})
-		}
+    getTraining() {
+        axios.all([
+          axios.get('/api/training/'+this.$route.params.id),
+          axios.get('/api/user')
+        ])
+        .then(axios.spread((training, trainer) => {
+          this.auth = trainer.data
+          if (training.data.user_id == trainer.data.id) {
+            let timeStamp = training.data.date_time
+            this.time = timeStamp.split(' ')[1]
+            this.date = timeStamp.split(' ')[0]
+            this.title = training.data.title
+            this.description = training.data.description
+          }
+        }))
+    },
+    deleteMeetUp (id) {
+      alert('Unable to delete')
+    }
 	},
 	created () {
-		this.loadTrainings(),
-		this.getUser()
+    this.getTraining()
+		this.loadTrainings()
 	}
 }
 </script>

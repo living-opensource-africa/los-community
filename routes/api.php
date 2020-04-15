@@ -29,6 +29,7 @@ Route::group(['middleware' => ['auth:api']], function() {
     Route::get('/meetups', 'HomeController@meetups');
     Route::get('/training/{id}', 'HomeController@training');
     Route::get('/trainer/{id}', 'HomeController@getUser');
+    Route::put('training/{id}/update', 'TrainingController@updateMeetUp');
 });
 
 Route::group(['middleware' => ['auth:api', 'admin']], function() {
