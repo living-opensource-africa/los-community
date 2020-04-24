@@ -15,11 +15,17 @@ import appRoutes from './routes'
 
 import NProgress from 'nprogress'
 
+import JQuery from 'jquery'
+
+import SketchpadMod from 'sketchpad-mod'
+
 import '../../node_modules/nprogress/nprogress.css'
 
 window.Vue = Vue
 
 Vue.use(VueRouter)
+
+Vue.prototype.$sketchPad = SketchpadMod
 
 const routes = appRoutes
 

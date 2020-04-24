@@ -66,8 +66,11 @@
                                     <router-link  class="dropdown-item" to="/home/trainings">
                                         {{ __('Trainings') }}
                                     </router-link >
-                                    <router-link  class="dropdown-item" to="/home/announcements">
-                                        {{ __('Announcements') }}
+                                    <router-link  class="dropdown-item" to="/home/sketchpad">
+                                        {{ __('Sketchpad') }}
+                                    </router-link >
+                                    <router-link  class="dropdown-item" to="/home/terminal">
+                                        {{ __('Terminal') }}
                                     </router-link >
                                     <router-link  class="dropdown-item" to="/home/knowledge">
                                         {{ __('Knowledge Base') }}

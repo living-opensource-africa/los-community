@@ -20,9 +20,14 @@ const appRoutes = [
 	component: require('./components/ViewTrainings.vue').default
  },
  {
- 	path: '/home/announcements',
- 	name: 'home.announcements',
- 	component: require('./components/Announcements.vue').default
+	path: '/home/sketchpad',
+	name: 'home.sketchpad',
+	component: require('./components/SketchPad.vue').default
+ },
+ {
+ 	path: '/home/terminal',
+ 	name: 'home.terminal',
+ 	component: require('./components/Terminal.vue').default
  },
  {
  	path: '/home/Knowledge',

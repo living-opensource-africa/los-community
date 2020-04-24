@@ -66,8 +66,11 @@
                                     <a  class="dropdown-item" href="/home/trainings">
                                         {{ __('Trainings') }}
                                     </a>
-                                    <a  class="dropdown-item" href="/home/announcements">
-                                        {{ __('Announcements') }}
+                                    <a  class="dropdown-item" href="/home/sketchpad">
+                                        {{ __('Sketchpad') }}
+                                    </a>
+                                    <a  class="dropdown-item" href="/home/terminal">
+                                        {{ __('Terminal') }}
                                     </a>
                                     <a  class="dropdown-item" href="/home/knowledge">
                                         {{ __('Knowledge Base') }}
