@@ -20,6 +20,17 @@ class TrainingController extends Controller
     }
 
     /**
+     * Show session interface, if client provides room
+     * @return view
+     */
+    public function room($id, $room) {
+        $training = MeetUp::find($id);
+        $agent = new \Jenssegers\Agent\Agent;
+        $isDesktop = $agent->isDesktop();
+        return view('training', compact(['training', 'isDesktop']));
+    }
+
+    /**
      *  Update meet up details
      *  @param Request $request
      *  @return jsonArray

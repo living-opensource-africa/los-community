@@ -35,7 +35,7 @@ window.onload = (evt) => {
   vidApi.executeCommand('toggleVideo', [])
   vidApi.executeCommand('displayName', '{{ Auth::user()->name }}')
   vidApi.on('readyToClose', (evt) => {
-    window.location.href = 'home/trainings/{{ $training->id }}/view'
+    window.history.back()
   })
 }
 </script>
