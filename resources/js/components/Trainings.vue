@@ -133,9 +133,9 @@ export default {
 				// Reload the trainings tab
 				this.loadTrainings()
 			})
-			.catch(error => {
+			.catch(e => {
 				this.trigger = "errors"
-				this.msg = error.data.message
+				this.msg = "Unable to create meet up"
 			})
 		},
 		notEmpty () {

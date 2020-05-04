@@ -3,7 +3,7 @@
       <div class="col-md-6">
           <h3> Hi, {{ auth.name }}</h3>
           <div class="col-md-6">
-            Welcome back!
+            Welcome home!
           </div>
       </div>
   </div>

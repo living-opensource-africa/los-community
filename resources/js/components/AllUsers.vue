@@ -2,12 +2,12 @@
     <div class="row col-md-12">
         <div class="col-md-6">
             <h3> Hi, {{ auth.name }}</h3>
-            
+
         </div>
         <div class="col-md-6 card-right" v-if="auth.user_type == 1">
             <h3>All Users</h3>
                <ol>
-                 <li v-bind:key="user.id" v-for="user in users"> 
+                 <li v-bind:key="user.id" v-for="user in users">
                    <div class="row">
                      <div class="col-md-6">
                        {{ user.name }}
@@ -20,7 +20,6 @@
                    </div>
                  </li>
                </ol>
-               <input class="btn btn-warning" type="button" value="SAVE" />
         </div>
         <div class="col-md-6 card-right" v-else>
           <h3> Community Members </h3>
