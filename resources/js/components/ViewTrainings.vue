@@ -8,7 +8,7 @@
                 <br />
                 <p> {{ training.description }} </p>
                 <br />
-                <form action="/room" method="POST">
+                <form v-bind:action="shareUrl" method="GET">
 
                     <input
                     name="room_id"
