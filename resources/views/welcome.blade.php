@@ -4,7 +4,7 @@
     <div class="flex-center position-ref full-height">
         <div class="container">
             <div class="title m-b-md text-right">
-                Living Open Source Commuity &nbsp;
+                Living Open Source Foundation &nbsp;
             </div>
             <div class="col-md-12 row">
               <div class="col-md-3 card">
@@ -59,9 +59,14 @@
                         <br />
                         <input type="text" name="session" class="form-control" placeholder="Session (Meeting Name)" />
                         <br />
-                        <input type="submit" class="btn btn primary">
+                        <input type="submit" value="CREATE / JOIN" class="btn btn primary">
                     </div>
                     </form>
+                    <br />
+                    <p>
+                    Join an online conference without having to sign up for an account, with no limit to the number of participants.
+                    All provided free, courtesy of Living Open Source Foundation and INFRATEL.
+                    </p>
                     <br />
                     <br />
                 </div>

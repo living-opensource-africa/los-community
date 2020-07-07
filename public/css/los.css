@@ -95,3 +95,12 @@ input[type="time"] {
   color:  #f0883f;
   text-shadow: 1px 1px 2px #fff;
 }
+
+.footer {
+    background-color: orange;
+    color: white;
+    padding: 20px;
+    position: relative;
+    bottom: 0px;
+    width: 100%;
+}
