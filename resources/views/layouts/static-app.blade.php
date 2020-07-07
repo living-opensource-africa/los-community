@@ -27,9 +27,9 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light bg-los shadow-lg">
             <div class="container">
+                <a class="navbar-brand" href="{{ url('/') }}">
                 <img class="logo"
                  src="{{ asset('images/LivingOpenSourceLogoOrangeText.jpg') }}" />
-                <a class="navbar-brand" href="{{ url('/') }}">
                 </a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
@@ -95,6 +95,13 @@
         <main class="py-4" id="meet">
             @yield('content')
         </main>
+    </div>
+    <div class="footer">
+    The Living Open Source Foundation
+    <br />
+    Advocates of Open Source
+    <br />
+    &copy; 2018 - {{ date('Y') }}
     </div>
 </body>
 <script src="{{ asset('fontawesome-5.13.0-web/js/all.min.js') }}" defer></script>
