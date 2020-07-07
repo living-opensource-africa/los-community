@@ -25,30 +25,11 @@
 </head>
 <body>
   <div id="app">
-    @php
-    $now = \carbon\Carbon::now('Africa/Lusaka');
-    $training_date_time = $training->date_time;
-    $training_date = explode(' ', $training_date_time)[0];
-    $training_time = explode(' ', $training_date_time)[1];
-    $date_now = $now->format('Y-m-d');
-    $time_now = $now->format('H:i');
-
-    // Boolean to either allow or deny room entry
-    $show_time = false;
-
-    if ($training_date == $date_now &&
-        $training_time <= $time_now) {
-            $show_time = true;
-    }
-    else {
-        $show_time = false;
-    }
-@endphp
 <div id="meet">
   <div class="container">
     <!--// <div class="col-md-12 row" id="meet"> //-->
-      @if (!$show_time)
-      <div class="col-md-12 text-center">
+      @if (!$isDesktop)
+        <div class="col-md-12 text-center">
           <h4> Please use the mobile app to join this meeting (Android Only)</h4>
           <br />
           <a href="{{ env('ANDROID_APP') }}">
@@ -59,21 +40,16 @@
           <h4> Enter "{{ $session }}" in the room section to join this session</h4>
         </div>
       @endif
-      @if (!$isDesktop)
-        <div class="col-md-12 no-support text-center">
-          <h4> Sorry, mobile devices not yet supported </h4>
-        </div>
-      @endif
     <!--// </div> //-->
 </div>
-@if ($isDesktop && $show_time)
+@if ($isDesktop)
 <script src="{{ env('MEETAPP_URL') }}"></script>
 <script>
   window.onload = (evt) => {
     const displaySize = document.querySelector("body")
     const domain = "{{ env('MEETAPP_DOMAIN') }}"
     const options = {
-    roomName: "{{ $training->title }}",
+    roomName: "{{ $session }}",
     width: displaySize.clientWidth - 15,
     height: window.innerHeight,
     parentNode: document.querySelector('#meet'),
@@ -88,7 +64,7 @@
     const vidApi = new JitsiMeetExternalAPI(domain, options)
     vidApi.executeCommand('toggleAudio', [])
     vidApi.executeCommand('toggleVideo', [])
-    vidApi.executeCommand('displayName', '{{ Auth::user()->name }}')
+    vidApi.executeCommand('displayName', '{{ $username }}')
     vidApi.on('readyToClose', (evt) => {
       window.history.back()
       })

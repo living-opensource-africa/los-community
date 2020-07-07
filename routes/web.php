@@ -17,6 +17,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// Open Session
+Route::post('open_session', 'TrainingController@liveSession')->name('session.live');
+
 Auth::routes();
 
 Route::group(['middleware' => ['isActive', 'auth']], function() {
