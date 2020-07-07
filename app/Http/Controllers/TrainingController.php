@@ -60,4 +60,12 @@ class TrainingController extends Controller
             ], 501);
         }
     }
+
+    public function liveSession(Request $request) {
+        $agent = new \Jenssegers\Agent\Agent;
+        $isDesktop = $agent->isDesktop();
+        $session = $request->session;
+        $username = $request->name;
+        return view('live_session', compact(['username', 'session', 'isDesktop']));
+    }
 }
