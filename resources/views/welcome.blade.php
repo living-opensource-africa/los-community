@@ -7,6 +7,7 @@
                 Living Open Source Foundation &nbsp;
             </div>
             <div class="col-md-12 row">
+            <!--//s
               <div class="col-md-3 card">
                 <h3> Developers </h3>
                 Working torwards building an open plaform where developers share
@@ -46,6 +47,7 @@
                   <i class="fa fa-globe v-aid" aria-hidden="true"></i>
                 </div>
               </div>
+              //-->
             </div>
             <hr />
             <div class="col-md-12 row">
