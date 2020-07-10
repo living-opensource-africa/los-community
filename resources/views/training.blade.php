@@ -71,6 +71,9 @@
               <button class="btn btn-primary">Download App</button>
           </a>
           <br />
+          <p>
+          Open the mobile app, then use "{{ $training->title }}" as the room name.
+          </p>
           <br />
         </div>
       @endif
