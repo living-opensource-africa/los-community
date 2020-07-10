@@ -48,6 +48,22 @@
   <div class="container">
     <!--// <div class="col-md-12 row" id="meet"> //-->
       @if (!$show_time)
+        <div class="col-md-12 text-center">
+          <h1> Meeting Not Yet Started </h1>
+          <br />
+          <h2>
+          {{ $training->title }}
+          </h2>
+          <h4>
+          Session scheduled for {{ $training_date }}
+          at {{ $training_time }}
+          </h4>
+          <p>
+          {{ $training->description }}
+          </p>
+        </div>
+      @endif
+      @if (!$isDesktop)
       <div class="col-md-12 text-center">
           <h4> Please use the mobile app to join this meeting (Android Only)</h4>
           <br />
@@ -56,12 +72,6 @@
           </a>
           <br />
           <br />
-          <h4> Enter "{{ $session }}" in the room section to join this session</h4>
-        </div>
-      @endif
-      @if (!$isDesktop)
-        <div class="col-md-12 no-support text-center">
-          <h4> Sorry, mobile devices not yet supported </h4>
         </div>
       @endif
     <!--// </div> //-->
