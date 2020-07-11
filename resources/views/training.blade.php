@@ -101,7 +101,9 @@
     const vidApi = new JitsiMeetExternalAPI(domain, options)
     vidApi.executeCommand('toggleAudio', [])
     vidApi.executeCommand('toggleVideo', [])
+    @if (Auth::check())
     vidApi.executeCommand('displayName', '{{ Auth::user()->name }}')
+    @endif
     vidApi.on('readyToClose', (evt) => {
       window.history.back()
       })

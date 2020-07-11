@@ -19,13 +19,13 @@ Route::get('/', function () {
 
 // Open Session
 Route::post('open_session', 'TrainingController@liveSession')->name('session.live');
+Route::get('/room/{id}/{room}', 'TrainingController@room');
 
 Auth::routes();
 
 Route::group(['middleware' => ['isActive', 'auth']], function() {
     Route::get('/home/{any?}/{id?}/{action?}', 'HomeController@index')->name('home');
     Route::post('/room', 'TrainingController@index');
-    Route::get('/room/{id}/{room}', 'TrainingController@room');
 });
 
 // Admin Routes
