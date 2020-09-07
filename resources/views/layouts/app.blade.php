@@ -60,12 +60,15 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                                    <!--//
                                     <router-link  class="dropdown-item" to="/home/users">
                                         {{ __('Users') }}
                                     </router-link >
+                                    //-->
                                     <router-link  class="dropdown-item" to="/home/trainings">
-                                        {{ __('Trainings') }}
+                                        {{ __('Trainings') }} / {{ _('Meetings') }}
                                     </router-link >
+                                    <!--//
                                     <router-link  class="dropdown-item" to="/home/terminal">
                                         {{ __('Terminal') }}
                                     </router-link >
@@ -75,6 +78,7 @@
                                     <router-link class="dropdown-item" to="/home/preferences">
                                         {{ __('Preferences') }}
                                     </router-link >
+                                    //-->
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
