@@ -60,13 +60,11 @@
                                 </a>
 
                                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                                    <!--//
-                                    <router-link  class="dropdown-item" to="/home/users">
-                                        {{ __('Users') }}
+                                    <router-link  class="dropdown-item" to="/home">
+                                       <i class="fa fa-home"></i> {{ __('Home') }}
                                     </router-link >
-                                    //-->
                                     <router-link  class="dropdown-item" to="/home/trainings">
-                                        {{ __('Trainings') }} / {{ _('Meetings') }}
+                                    <i class="fas fa-video"></i> {{ __('Live Session') }}
                                     </router-link >
                                     <!--//
                                     <router-link  class="dropdown-item" to="/home/terminal">
@@ -82,7 +80,7 @@
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
+                                        <i class="fas fa-sign-out-alt"></i> {{ __('Logout') }}
                                     </a>
 
                                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">

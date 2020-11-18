@@ -13,6 +13,8 @@
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="{{ asset('js/timer.js') }}" defer></script>
+    <script src="{{ asset('fontawesome-5.13.0-web/js/all.min.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
@@ -24,6 +26,13 @@
     <link href="{{ asset('fontawesome-5.13.0-web/css/all.min.css') }}" rel="stylesheet">
 </head>
 <body>
+<script defer>
+window.onload = () => {
+  timer(
+      "{{\Carbon\Carbon::parse($training->date_time)->diffInMinutes(\carbon\Carbon::now('Africa/Lusaka'))}}"
+      )
+}
+</script>
   <div id="app">
     @php
     $now = \carbon\Carbon::now('Africa/Lusaka');
@@ -49,7 +58,7 @@
     <!--// <div class="col-md-12 row" id="meet"> //-->
       @if (!$show_time)
         <div class="col-md-12 text-center">
-          <h1> Meeting Not Yet Started </h1>
+          <h1> Session Not Yet Started </h1>
           <br />
           <h2>
           {{ $training->title }}
@@ -75,7 +84,7 @@
           Open the mobile app, then use "{{ $training->title }}" as the room name.
           </p>
           <br />
-        </div>
+      </div>
       @endif
     <!--// </div> //-->
 </div>
@@ -111,6 +120,5 @@
     </script>
     @endif
     </div>
-    <script src="{{ asset('fontawesome-5.13.0-web/js/all.min.js') }}" defer></script>
   </body>
 </html>
